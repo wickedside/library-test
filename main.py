@@ -13,6 +13,70 @@ class LibraryApp(QMainWindow):
         self.setWindowTitle("Библиотека")
         self.setGeometry(100, 100, 450, 600)
 
+        # стили (из-за них не видно стрелочки выпадающего списка у жанров справа, добавлять картинку для этого я не буду, дабы не засорять проект)
+        self.setStyleSheet("""
+            QMainWindow {
+                background-color: #f0f0f0;
+            }
+
+            QLabel {
+                font-size: 14px;
+                color: #2f2f2f;
+            }
+
+            QPushButton {
+                background-color: #4285F4;
+                color: white;
+                font: bold 12px;
+                border: 2px solid #4285F4;
+                border-radius: 4px;
+                padding: 5px;
+                min-width: 80px;
+            }
+
+            QPushButton:hover {
+                background-color: #3578E5;
+            }
+
+            QPushButton:pressed {
+                background-color: #2C5BB6;
+                border-color: #2C5BB6;
+            }
+
+            QLineEdit, QComboBox {
+                font-size: 14px;
+                border: 2px solid #BDBDBD;
+                border-radius: 4px;
+                padding: 5px;
+                min-height: 20px;
+            }
+
+            QComboBox::drop-down {
+                subcontrol-origin: padding;
+                subcontrol-position: right center;
+                width: 15px;
+                border-left-width: 1px;
+                border-left-color: #BDBDBD;
+                border-left-style: solid;
+                border-top-right-radius: 2px;
+                border-bottom-right-radius: 2px;
+            }
+
+            QTableWidget {
+                gridline-color: #D3D3D3;
+                selection-background-color: #ADD8E6;
+            }
+
+            QTableWidget::item {
+                padding: 5px;
+                border-color: transparent;
+            }
+
+            QTableWidget::item:selected {
+                background-color: #ADD8E6;
+            }
+        """)
+
         # главный виджет
         central_widget = QWidget(self)
         self.setCentralWidget(central_widget)
